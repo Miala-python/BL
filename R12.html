@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>12: Montagnes et Pôle | Exφloπ@ | BL | Miala</title>
+    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+	<script src="lib/jquery.js"></script>
+	<script src="lib/jquery.rwdImageMaps.js"></script>
 
-<body>
-    <div class="block">
-        <div class="content">
-            <h1>BL : Explora : Land 12</h1>
-        </div>
-    </div>
+    <style>
+        .block {
+            padding-top: 1rem;
+            padding-left: 3%;
+            padding-right: 3%;
+        }
+    </style>
+</head>
+
+	<body class="block">
+		<div class="content">
+			<div class="columns">
+				<div class="column">
+                    <nav class="breadcrumb is-small" aria-label="breadcrumbs">
+                      <ul>
+                        <li>Miala</li>
+                        <li><a href="index.html">BL: Exφloπ@</a></li>
+                        <li><a href="Plan.html">Plan</a></li>
+                        <li class="is-active"><a href="#" aria-current="page">Région n°12</a></li>
+                      </ul>
+                    </nav>
+					<h1>Région des Montagnes et du Pôle</h1>
+
+					<img src="imgs/R12_GLB" alt="Plan de la région 12" 
+						width="1090" height="775"
+						usemap="#R12map">
+
+					<map name="R12map">
+
+					</map>
+				</div>
+			</div>
+	
+	</div>
+	<script>
+		$('img[usemap]').rwdImageMaps();
+	</script>
 
 </body>
-
 </html>
