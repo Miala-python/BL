@@ -1,0 +1,74 @@
+
+  {
+    "nom": "Oniri Explora",
+    "img": "plan - V2.jpg",
+    "items": [
+      {
+        "id": "3",
+        "nom": "Ville",
+        "items": [
+          {
+            "nom": "Le Métro",
+            "type": "tr"
+          },
+          {
+            "nom": "Le Stadium",
+            "type": "att"
+          },
+          {
+            "nom": "Le Théatre",
+            "type": "spc"
+          },
+          {
+            "nom": "Le Cirque",
+            "type": "spc"
+          },
+          {
+            "nom": "Cinema",
+            "type": "spc",
+            "statut": "Prochainement"
+          },
+          {
+            "nom": "La Fuite de Pompei",
+            "type": "att"
+          },
+          {
+            "nom": "Le Donjon",
+            "type": "vst"
+          },
+          {
+            "nom": "Attaque au chateau",
+            "type": "att"
+          },
+          {
+            "nom": "Le Forum",
+            "type": "att"
+          }
+        ]
+      },
+      {
+        "nom": "RScience"
+      },
+      {
+        "nom": "RGrottes"
+      },
+      {
+        "nom": "RMontagnes & Pôle"
+      },
+      {
+        "nom": "RPeur"
+      },
+      {
+        "nom": "RForêt"
+      },
+      {
+        "nom": "REau"
+      },
+      {
+        "nom": "RDragons"
+      },
+      {
+        "nom": "RCatastrophes"
+      }
+    ]
+  }
