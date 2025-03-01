@@ -1,77 +1,98 @@
-
-  {
-    "nom": "Oniri Explora",
-    "img": "plan - V2.jpg",
-    "type": "zone",
-    "items": [
-      {
-        "id": "3",
-        "nom": "Ville",
-        "type": "zone",
-        "items": [
-          {
-            "nom": "Le Métro",
-            "type": "tr"
-          },
-          {
-            "nom": "Le Stadium",
-            "type": "att"
-          },
-          {
-            "nom": "Le Théatre",
-            "type": "spc"
-          },
-          {
-            "nom": "Le Cirque",
-            "type": "spc"
-          },
-          {
-            "nom": "Cinema",
-            "type": "spc",
-            "statut": "Prochainement"
-          },
-          {
-            "nom": "La Fuite de Pompei",
-            "type": "att"
-          },
-          {
-            "nom": "Le Donjon",
-            "type": "vst",
-            "desc": "Visitez la plus haute tour du chateau !"
-          },
-          {
-            "nom": "Attaque au chateau",
-            "type": "att"
-          },
-          {
-            "nom": "Le Forum",
-            "type": "att"
-          }
-        ]
-      },
-      {
-        "nom": "RScience"
-      },
-      {
-        "nom": "RGrottes"
-      },
-      {
-        "nom": "RMontagnes & Pôle"
-      },
-      {
-        "nom": "RPeur"
-      },
-      {
-        "nom": "RForêt"
-      },
-      {
-        "nom": "REau"
-      },
-      {
-        "nom": "RDragons"
-      },
-      {
-        "nom": "RCatastrophes"
-      }
-    ]
-  }
+{
+  "nom": "Oniri Explora",
+  "img": "plan - V2.jpg",
+  "type": "zone",
+  "items": [
+    {
+      "id": "3",
+      "nom": "Ville",
+      "type": "zone",
+      "items": [
+        {
+          "nom": "Le Métro",
+          "type": "tr",
+          "desc": "Certains passages des égouts mênent finalement au métro contemporain.",
+          "tags": "DX;TR;(AP;ST",
+          "lvl":"0;1",
+          "id":"1"
+        },
+        {
+          "nom": "Le Stadium",
+          "type": "att;mu",
+          "desc": "Vous venez profiter du spectacle ou participer à la course ? Dans tous les cas, le stade antique vous accueil à bras ouverts !",
+          "lvl":"0;4",
+          "tags":"MA;FS;IT;S",
+          "id": "2"
+          
+        },
+        {
+          "nom": "Le Théatre",
+          "type": "sp",
+          "id":"3"
+        },
+        {
+          "nom": "Le Cirque",
+          "type": "sp",
+          "id":"4",
+          "lvl":"2",
+          "tags": "F",
+          "start": "9h09",
+          "end":"20h09",
+          "delay":"30",
+          "desc":"Soyez spectateur d'un combat de gladiateurs !"
+        },
+        {
+          "nom": "Cinema",
+          "type": "sp",
+          "state": "Prochainement",
+          "id":"5"
+        },
+        {
+          "nom": "La Fuite de Pompei",
+          "type": "att",
+          "id":"6",
+          "desc":"La fumée bouillante va arriver. les tremblements de terre ont déjà commencés. Les dieux sont fachés. La fuite est une nécessité.",
+          "tags":"FS;F;S",
+          "lvl":"5"
+        },
+        {
+          "nom": "Le Donjon",
+          "type": "vst",
+          "desc": "Visitez la plus haute tour du chateau !"
+        },
+        {
+          "nom": "Attaque au chateau",
+          "type": "att"
+        },
+        {
+          "nom": "Le Forum",
+          "type": "att"
+        }
+      ]
+    },
+    {
+      "nom": "RScience"
+    },
+    {
+      "nom": "RGrottes"
+    },
+    {
+      "nom": "RMontagnes & Pôle"
+    },
+    {
+      "nom": "RPeur"
+    },
+    {
+      "nom": "RForêt"
+    },
+    {
+      "nom": "REau"
+    },
+    {
+      "nom": "RDragons"
+    },
+    {
+      "nom": "RCatastrophes"
+    }
+  ]
+}
