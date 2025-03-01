@@ -7,6 +7,7 @@
       "id": "3",
       "nom": "Ville",
       "type": "zone",
+      "desc": "Une ville qui a traversé tous les ages.",
       "items": [
         {
           "nom": "Le Métro",
@@ -19,7 +20,7 @@
         {
           "nom": "Le Stadium",
           "type": "att;mu",
-          "desc": "Vous venez profiter du spectacle ou participer à la course ? Dans tous les cas, le stade antique vous accueil à bras ouverts !",
+          "desc": "Venez-vous profiter du spectacle ou participer à la course ? Dans tous les cas, le stade antique vous accueil à bras ouverts !",
           "lvl":"0;4",
           "tags":"MA;FS;IT;S",
           "id": "2"
