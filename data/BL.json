@@ -2,10 +2,12 @@
   {
     "nom": "Oniri Explora",
     "img": "plan - V2.jpg",
+    "type": "zone",
     "items": [
       {
         "id": "3",
         "nom": "Ville",
+        "type": "zone",
         "items": [
           {
             "nom": "Le Métro",
@@ -34,7 +36,8 @@
           },
           {
             "nom": "Le Donjon",
-            "type": "vst"
+            "type": "vst",
+            "desc": "Visitez la plus haute tour du chateau !"
           },
           {
             "nom": "Attaque au chateau",
