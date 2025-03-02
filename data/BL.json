@@ -42,7 +42,7 @@
                             "tags": "F",
                             "start": "9h09",
                             "end": "20h09",
-                            "delay": "30",
+                            "delay": "30 minutes",
                             "desc": "Soyez spectateur d'un combat de gladiateurs !"
                         },
                         {
@@ -110,7 +110,7 @@
                             {
                               "nom":"Auberges",
                               "type":"h",
-                              "id":"<b style='font-color:orange;'>•</b>"
+                              "id":"<b style='color:orange;'>[•]</b>"
                             }
                             ]
                         }
