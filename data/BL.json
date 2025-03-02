@@ -7,7 +7,7 @@
             "nom": "Ville",
             "type": "land",
             "desc": "Une ville qui a traversé tous les ages.",
-            "lore":"\"On est plus fort ensemble\"\nA force de se regroupper, les êtres humains ont fondés unecivilisation autour des \"villes\".\nCelle-ci a évoluée dans le temps, mais pas à la même vitesse de partout.\nDans tous les cas, les humains des villes ont oublié la raison de cette vie en collectivité..."
+            "lore":"\"On est plus fort ensemble\"\nA force de se regroupper, les êtres humains ont fondés unecivilisation autour des \"villes\".\nCelle-ci a évoluée dans le temps, mais pas à la même vitesse de partout.\nDans tous les cas, les humains des villes ont oublié la raison de cette vie en collectivité...",
             "items": [
                 {
                     "nom": "Antiquité",
@@ -62,9 +62,9 @@
                         {
                           "nom" : "Le forum",
                           "type" : "b;r",
-                          "tags" : "ext"
+                          "tags" : "ext",
                           "id" : "F"
-                        }
+                        },
                         {
                           "nom" : "Le Marché",
                           "type" : "b;r",
@@ -96,7 +96,7 @@
                         {
                           "nom":"La Porte de Pierre",
                           "type": "b",
-                          "id":"P",
+                          "id":"P"
                         },
                         {
                           "nom" : "Les remparts",
