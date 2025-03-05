@@ -26,7 +26,7 @@
                             "type": "att;mu",
                             "desc": "Venez-vous profiter du spectacle ou participer à la course ? Dans tous les cas, le stade antique vous accueil à bras ouverts !",
                             "lvl": "0;4",
-                            "tags": "MA;FS;IT;S",
+                            "tags": "MA;FS;IT;Ss",
                             "id": "2"
                         },
                         {
@@ -39,7 +39,7 @@
                             "type": "sp",
                             "id": "4",
                             "lvl": "2",
-                            "tags": "F",
+                            "tags": "Ff",
                             "start": "9h09",
                             "end": "20h09",
                             "delay": "30 minutes",
@@ -56,18 +56,18 @@
                             "type": "att",
                             "id": "6",
                             "desc": "La fumée bouillante va arriver. les tremblements de terre ont déjà commencés. Les dieux sont fachés. La fuite est une nécessité.",
-                            "tags": "FS;F;S",
+                            "tags": "FS;F;Ss",
                             "lvl": "5"
                         },
                         {
                           "nom" : "Le forum",
-                          "type" : "b;r",
+                          "type" : "bb;rr",
                           "tags" : "ext",
                           "id" : "F"
                         },
                         {
                           "nom" : "Le Marché",
-                          "type" : "b;r",
+                          "type" : "bb;rr",
                           "id":"M"
                         }
                     ]
@@ -95,12 +95,12 @@
                         },
                         {
                           "nom":"La Porte de Pierre",
-                          "type": "b",
+                          "type": "bb",
                           "id":"P"
                         },
                         {
                           "nom" : "Les remparts",
-                          "type":"h;r;mu",
+                          "type":"hh;rr;mu",
                           "id": "R"
                         },
                         {
@@ -109,7 +109,7 @@
                           "items":[
                             {
                               "nom":"Auberges",
-                              "type":"h",
+                              "type":"hh",
                               "id":"<b style='color:orange;'>[•]</b>"
                             }
                             ]
@@ -119,7 +119,8 @@
             ]
         },
         {
-            "nom": "RScience"
+            "nom": "Science",
+            "type": "land"
         },
         {
             "nom": "RGrottes"
