@@ -17,7 +17,7 @@
                             "nom": "Le Métro",
                             "type": "tr",
                             "desc": "Certains passages des égouts mênent finalement au métro contemporain.",
-                            "tags": "DX;TR;(AP;ST",
+                            "tags": "DX;(AP;ST",
                             "lvl": "0;1",
                             "id": "1"
                         },
