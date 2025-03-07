@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title id="pageTitle">Recherche paramétrée | Exφloπ@ | BL | Miala</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="./lib/style.css">
+    <script src="lib/jquery.js"></script>
+    <script src="lib/jquery.rwdImageMaps.js"></script>
+    <script src="lib/search.js"></script>
+
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Recherche paramétrée</h1>
+            <div id="deleteMe">
+                <h1>Chargement en cours... | BL: Exφloπ@ / ADD</h1>
+                <br><progress class="progress is-small is-primary" max="100">25%</progress>
+            </div>
+            <form>
+                <!-- Zone Dropdown -->
+                <div class="field">
+                    <label class="label">Zone</label>
+                    <div class="control">
+                        <div class="select">
+                            <select id="zoneSelect">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tags Multiselect -->
+                <div class="field">
+                    <label class="label">Tags</label>
+                    <div class="control">
+                        <div class="select is-multiple">
+                            <select multiple size="7" id="tagSelect">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Nom Text Field -->
+        <div class="field">
+            <label class="label">Nom</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="porte de">
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="field">
+            <div class="control">
+                <button class="button is-primary" type="submit">Soumettre</button>
+            </div>
+        </div>
+        </form>
+        </div>
+    </section>
+</body>
+
+</html>
+</div>

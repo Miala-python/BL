@@ -152,14 +152,14 @@
         },
         {
             "nom": "L'aventure Doudou",
-            "img": "ADD plan 1-16.jpg",
+            "img": "ADDGlblPlan.jpg",
             "type": "Parc",
             "rcc":"ADD",
             "items": [
                 {
                     "id": "1",
                     "nom": "Entrée",
-                    "type": "zone",
+                    "type": "land",
                     "items": [
                         {
                             "nom": "Monodoudou",
@@ -195,7 +195,7 @@
                             "nom": "Le permis de Riri",
                             "type": "att",
                             "lvl": "1;2",
-                            "tags": "IT;Mouille;Non doudous enceints;pour les plus petits;restriction de taille",
+                            "tags": "IT;eau;nde;pti",
                             "desc": "Des voitures à piloter, mais n'oubliez pas le code de la route !(Non requis)",
                             "id": "5"
                         }
@@ -204,42 +204,42 @@
                 {
                     "id": "2",
                     "nom": "Petits doudous",
-                    "type": "zone"
+                    "type": "land"
                 },
                 {
                     "id": "3",
                     "nom": "Les 6 Doudous en histoire",
-                    "type": "zone"
+                    "type": "land"
                 },
                 {
                     "id": "4",
                     "nom": "Serpattractions",
-                    "type": "zone"
+                    "type": "land"
                 },
                 {
                     "id": "5",
                     "nom": "Les Grands 8 en Folie",
-                    "type": "zone"
+                    "type": "land"
                 },
                 {
                     "id": "6",
                     "nom": "Peupeuvre Land",
-                    "type": "zone"
+                    "type": "land"
                 },
                 {
                     "id": "7",
                     "nom": "Hiponie",
-                    "type": "zone"
+                    "type": "land"
                 },
                 {
                     "id": "8",
                     "nom": "Volcans",
-                    "type": "zone"
+                    "type": "land"
                 },
                 {
                     "id": "9",
                     "nom": "Montagnes",
-                    "type": "zone"
+                    "type": "land"
                 }
             ]
         }
