@@ -1,0 +1,93 @@
+{
+  "nom": "L'aventure Doudou",
+  "img": "ADD plan 1-16.jpg",
+  "type": "zone",
+  "items": [
+    {
+      "id": "1",
+      "nom": "Entrée",
+      "type": "zone",
+      "items": [
+        {
+          "nom": "Monodoudou",
+          "type": "tr",
+          "desc": "Un monorail allant dela gare à la rivière en passant par la forêt de Doudou Noisette !",
+          "tags": "IT;TR;AR;en famille",
+          "lvl":"1;3",
+          "id":"1"
+        },
+        {
+          "nom": "L'aventure commence !",
+          "type": "Cinéma",
+          "desc": "Un film vous plongeant dans le monde incroyable de l'aventure doudou.",
+          "tags":"2D;3D;4D;en famille",
+          "id": "2"
+          
+        },
+        {
+          "nom": "Le passage des 6 doudous",
+          "type": "mu",
+          "desc": "Un chemin vous racontant le caractère de chacun des 6 doudous. Requis pour l'attraction: 6Doudous : Notre mission",
+          "tags":";Mouille;à ne pas manquer;en famille",
+          "id":"3"
+        },
+        {
+          "nom": "La petite roue",
+          "type": "att",
+          "id":"4",
+          "lvl":"1",
+          "tags": "Photopass;Pour les plus petits",
+          "desc":"Pourquoi pas une grande roue ? Vous verrez..."
+        },
+        {
+          "nom": "Le permis de Riri",
+          "type": "att",
+          "lvl":"1;2",
+          "tags": "IT;Mouille;Non doudous enceints;pour les plus petits;restriction de taille",
+          "desc":"Des voitures à piloter, mais n'oubliez pas le code de la route !(Non requis)"
+          "id":"5"
+        },
+              ]
+    },
+    {
+      "id": "2",
+      "nom": "Petits doudous",
+      "type": "zone",
+    },
+    {
+      "id": "3",
+      "nom": "Les 6 Doudous en histoire",
+      "type": "zone",
+    },
+    {
+      "id": "4",
+      "nom": "Serpattractions",
+      "type": "zone",
+    },
+    {
+      "id": "5",
+      "nom": "Les Grands 8 en Folie",
+      "type": "zone",
+    },
+    {
+      "id": "6",
+      "nom": "Peupeuvre Land",
+      "type": "zone",
+    },
+    {
+      "id": "7",
+      "nom": "Hiponie",
+      "type": "zone",
+    },
+    {
+      "id": "8",
+      "nom": "Volcans",
+      "type": "zone",
+    },
+    {
+      "id": "9",
+      "nom": "Montagnes",
+      "type": "zone",
+    }
+  ]
+}
