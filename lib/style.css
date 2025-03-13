@@ -47,7 +47,7 @@ span.gfonticon_button {
 }
 
 .list-container {
-    height: 90vh; 
+    height: 85vh; 
     /* height: calc(100vw - 5px); */
     /* overflow-y: scroll; */
     overflow-y: auto;
@@ -67,6 +67,9 @@ article.is-rounded{
     margin-bottom: .5em;
 }
 
+option.selected {
+    background-color: #964300a8;
+}
 
 
 /* Scroll: */

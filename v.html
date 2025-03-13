@@ -15,10 +15,6 @@
 
 <body class="block">
 	<div id="breadcrumb_container"></div>
-	<button onclick="changeTheme()" class="button"
-		style="position: fixed; bottom: 10px; left: 10px; z-index: 1000;">Changer le thème</button>
-	<button onclick="switchLanguage()" class="button"
-		style="position: fixed; bottom: 10px; right: 10px; z-index: 1000;">Switch language</button>
 	<div class="content" id="pageContent" style="
     margin-bottom: 2em;">
 		<div id="deleteMe">
@@ -26,9 +22,16 @@
 			<br><progress class="progress is-small is-primary" max="100">25%</progress>
 		</div>
 	</div>
+	<div class="content" id="changelog"></div>
 	<script>
 		$('img[usemap]').rwdImageMaps();
 	</script>
+
+<div class="buttons" style="position: fixed; bottom: 10px; left: 10px; z-index: 1000;">
+	<button onclick="changeTheme()" class="button">Changer le thème</button>
+	<button onclick="switchLanguage()" class="button">Switch language</button>
+	<button onclick="window.location.href = getPageURL('search.html');" class="button">Recherche paramétrée</button>
+</div>
 
 </body>
 
