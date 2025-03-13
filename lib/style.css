@@ -53,6 +53,10 @@ span.gfonticon_button {
     overflow-y: auto;
 }
 
+.last_item{
+    padding-bottom: 10vh;
+}
+
 article.is-rounded{
     /* padding-top: 2em;
     border-radius: 30px;
