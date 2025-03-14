@@ -20,6 +20,15 @@ span.gfonticon_button {
     padding-top: 0.4rem;
 }
 
+/* Barre de boutons */
+.buttons.bottom {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1000;
+    margin-bottom: inherit;
+}
+
 .notif_bd {
     position: fixed !important;
     margin-right: 2.5%;
@@ -47,17 +56,17 @@ span.gfonticon_button {
 }
 
 .list-container {
-    height: 85vh; 
+    height: 85vh;
     /* height: calc(100vw - 5px); */
     /* overflow-y: scroll; */
     overflow-y: auto;
 }
 
-.last_item{
+.last_item {
     padding-bottom: 10vh;
 }
 
-article.is-rounded{
+article.is-rounded {
     /* padding-top: 2em;
     border-radius: 30px;
     margin-bottom: 1em; */
@@ -124,4 +133,4 @@ option.selected {
 
 .scroll::-ms-scrollbar-thumb:hover {
     background-color: rgba(255, 255, 255, 0.7);
-} 
+}
