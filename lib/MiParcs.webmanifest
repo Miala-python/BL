@@ -9,6 +9,11 @@
   "icons": [
     {
       "src": "https://miala-python.github.io/BL/imgs/logo.png",
+      "sizes": "1009x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "https://miala-python.github.io/BL/imgs/logoKRE.png",
       "sizes": "1000x1000",
       "type": "image/png"
     }
