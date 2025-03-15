@@ -25,7 +25,7 @@ span.gfonticon_button {
     position: fixed;
     bottom: 10px;
     left: 10px;
-    z-index: 1000;
+    z-index: 30; /* Derrière le Modal (40) */
     margin-bottom: inherit;
 }
 
@@ -80,9 +80,16 @@ article.is-rounded {
     margin-bottom: .5em;
 }
 
-option.selected {
-    background-color: #964300a8;
+
+/* For a select in a div for mobile #1 */
+#tagSelect option:hover {
+    background-color: #ffae008f;
 }
+
+option.selected {
+    background-color: #11c9008f;
+}
+
 
 
 /* Scroll: */
