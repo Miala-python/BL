@@ -1,0 +1,9 @@
+{
+  "name": "Parcs Miala",
+  "short_name": "MiParcs",
+  "description": "Le site officiel des parcs d'attraction de l'ile Miala",
+  "start_url": "https://miala-python.github.io/BL/v.html?lang=fr",
+  "theme_color": "#000000",
+  "lang": "fr-fr",
+  "display": "minimal-ui"
+}
