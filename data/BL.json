@@ -1,147 +1,302 @@
 {
-    "nom": "Oneiri Exφloπ@",
-    "img": "plan - V2.jpg",
+    "nom": "Miala",
     "items": [
         {
-            "id": "3",
-            "nom": "Ville",
-            "type": "land",
-            "desc": "Une ville qui a traversé tous les ages.",
-            "lore":"\"On est plus fort ensemble\"\nA force de se regroupper, les êtres humains ont fondés unecivilisation autour des \"villes\".\nCelle-ci a évoluée dans le temps, mais pas à la même vitesse de partout.\nDans tous les cas, les humains des villes ont oublié la raison de cette vie en collectivité...",
+            "nom": "Oneiri Exφloπ@",
+            "img": "plan - V2.jpg",
+            "type": "Parc",
+            "rcc": "BL",
             "items": [
                 {
-                    "nom": "Antiquité",
-                    "type": "zone",
+                    "id": "3",
+                    "nom": "Ville",
+                    "type": "land",
+                    "desc": "Une ville qui a traversé tous les ages.",
+                    "lore": "\"On est plus fort ensemble\"\nA force de se regroupper, les êtres humains ont fondés unecivilisation autour des \"villes\".\nCelle-ci a évoluée dans le temps, mais pas à la même vitesse de partout.\nDans tous les cas, les humains des villes ont oublié la raison de cette vie en collectivité...",
                     "items": [
                         {
-                            "nom": "Le Métro",
-                            "type": "tr",
-                            "desc": "Certains passages des égouts mênent finalement au métro contemporain.",
-                            "tags": "DX;(AP;ST",
-                            "lvl": "0;1",
-                            "id": "1"
+                            "nom": "Antiquité",
+                            "type": "zone",
+                            "items": [
+                                {
+                                    "nom": "Le Métro",
+                                    "type": "tr",
+                                    "desc": "Certains passages des égouts mênent finalement au métro contemporain.",
+                                    "tags": "DX;(AP;ST",
+                                    "lvl": "0;1",
+                                    "id": "1"
+                                },
+                                {
+                                    "nom": "Le Circus",
+                                    "type": "att;mu",
+                                    "desc": "Venez-vous profiter du spectacle ou participer à la course ? Dans tous les cas, le stade antique vous accueil à bras ouverts !",
+                                    "lvl": "0;4",
+                                    "tags": "MA;FS;IT;Ss",
+                                    "id": "2"
+                                },
+                                {
+                                    "nom": "Le Théatre",
+                                    "type": "sp",
+                                    "id": "3"
+                                },
+                                {
+                                    "nom": "L'amphithéâtre",
+                                    "type": "sp",
+                                    "id": "4",
+                                    "lvl": "2",
+                                    "tags": "Ff",
+                                    "start": "9h09",
+                                    "end": "20h09",
+                                    "delay": "30 minutes",
+                                    "desc": "Soyez spectateur d'un combat de gladiateurs !"
+                                },
+                                {
+                                    "nom": "Cinema",
+                                    "type": "sp",
+                                    "state": "Prochainement",
+                                    "id": "5"
+                                },
+                                {
+                                    "nom": "La Fuite de Pompei",
+                                    "type": "att",
+                                    "id": "6",
+                                    "desc": "La fumée bouillante va arriver. les tremblements de terre ont déjà commencés. Les dieux sont fachés. La fuite est une nécessité.",
+                                    "tags": "FS;fF;Ss",
+                                    "lvl": "5"
+                                },
+                                {
+                                    "nom": "Le forum",
+                                    "type": "bb;rr",
+                                    "tags": "ext",
+                                    "id": "F"
+                                },
+                                {
+                                    "nom": "Le Marché",
+                                    "type": "bb;rr",
+                                    "id": "M"
+                                }
+                            ]
                         },
                         {
-                            "nom": "Le Circus",
-                            "type": "att;mu",
-                            "desc": "Venez-vous profiter du spectacle ou participer à la course ? Dans tous les cas, le stade antique vous accueil à bras ouverts !",
-                            "lvl": "0;4",
-                            "tags": "MA;FS;IT;Ss",
-                            "id": "2"
+                            "nom": "Moyen-Âge",
+                            "type": "zone",
+                            "items": [
+                                {
+                                    "nom": "Le Donjon",
+                                    "type": "mu",
+                                    "desc": "Visitez la plus haute tour du chateau !",
+                                    "id": "10",
+                                    "tags": "ap",
+                                    "lvl": "1"
+                                },
+                                {
+                                    "nom": "Attaque au chateau",
+                                    "type": "att",
+                                    "id": "11",
+                                    "tags": "ma;dx;it",
+                                    "lvl": "2",
+                                    "desc": "Attention ! On nous attque ! Vite ! Aidez-nous à défendre !",
+                                    "sys": "Jeu de tir"
+                                },
+                                {
+                                    "nom": "La Porte de Pierre",
+                                    "type": "bb",
+                                    "id": "P"
+                                },
+                                {
+                                    "nom": "Les remparts",
+                                    "type": "hh;rr;mu",
+                                    "id": "R"
+                                },
+                                {
+                                    "nom": "Le Village",
+                                    "type": "zone",
+                                    "items": [
+                                        {
+                                            "nom": "Auberges",
+                                            "type": "hh",
+                                            "id": "<b style='color:orange;'>[•]</b>"
+                                        }
+                                    ]
+                                }
+                            ]
                         },
                         {
-                            "nom": "Le Théatre",
-                            "type": "sp",
-                            "id": "3"
-                        },
-                        {
-                            "nom": "L'amphithéâtre",
-                            "type": "sp",
-                            "id": "4",
-                            "lvl": "2",
-                            "tags": "Ff",
-                            "start": "9h09",
-                            "end": "20h09",
-                            "delay": "30 minutes",
-                            "desc": "Soyez spectateur d'un combat de gladiateurs !"
-                        },
-                        {
-                            "nom": "Cinema",
-                            "type": "sp",
-                            "state": "Prochainement",
-                            "id": "5"
-                        },
-                        {
-                            "nom": "La Fuite de Pompei",
-                            "type": "att",
-                            "id": "6",
-                            "desc": "La fumée bouillante va arriver. les tremblements de terre ont déjà commencés. Les dieux sont fachés. La fuite est une nécessité.",
-                            "tags": "FS;F;Ss",
-                            "lvl": "5"
-                        },
-                        {
-                          "nom" : "Le forum",
-                          "type" : "bb;rr",
-                          "tags" : "ext",
-                          "id" : "F"
-                        },
-                        {
-                          "nom" : "Le Marché",
-                          "type" : "bb;rr",
-                          "id":"M"
-                        }
-                    ]
-                },
-                {
-                    "nom": "Moyen-Âge",
-                    "type": "zone",
-                    "items": [
-                        {
-                            "nom": "Le Donjon",
-                            "type": "mu",
-                            "desc": "Visitez la plus haute tour du chateau !",
-                            "id": "10",
-                            "tags": "ap",
-                            "lvl": "1"
-                        },
-                        {
-                            "nom": "Attaque au chateau",
-                            "type": "att",
-                            "id": "11",
-                            "tags": "ma;dx;it",
-                            "lvl": "2",
-                            "desc": "Attention ! On nous attque ! Vite ! Aidez-nous à défendre !",
-                            "sys": "Jeu de tir"
-                        },
-                        {
-                          "nom":"La Porte de Pierre",
-                          "type": "bb",
-                          "id":"P"
-                        },
-                        {
-                          "nom" : "Les remparts",
-                          "type":"hh;rr;mu",
-                          "id": "R"
-                        },
-                        {
-                          "nom":"Le Village",
+                          "nom":"Aujourd'hui",
                           "type":"zone",
                           "items":[
                             {
-                              "nom":"Auberges",
-                              "type":"hh",
-                              "id":"<b style='color:orange;'>[•]</b>"
+                              "id":"25",
+                              "nom":"L'immeuble en feu",
+                              "desc":"Allez ! Tous le monde à son poste ! Oui, même toi, apprentit pompier; le temps presse !",
+                              "tags":"it,ff,eau,photo",
+                              "lvl":"2"
                             }
                             ]
                         }
                     ]
+                },
+                {
+                    "nom": "Science",
+                    "type": "land"
+                },
+                {
+                    "nom": "RGrottes"
+                },
+                {
+                    "nom": "RMontagnes & Pôle"
+                },
+                {
+                    "nom": "RPeur"
+                },
+                {
+                    "nom": "RForêt"
+                },
+                {
+                    "nom": "REau"
+                },
+                {
+                    "nom": "Dragons",
+                    "id":"16",
+                    "lore":"La légende locale raconte que les animaux ont évolué lors de la Grande Mission afin d'être capable de protéger le trésor de tous . Cela aurait donc donné la race des Dragons.\nChaque Dragon protège donc son trsor, convaincu que c'est le seul ayant de la valeur. Il contribuera toute sa vie à l'enrichir.\nLes Dragons sont donc majoritairement égoistes, prétentieux, vantards et très compétitifs; ce qui ne les empêchent pas d'être agréables avec les visiteurs et voyageurs curieux, tant qu'ils ne convoitent pas LEUR trésor."    ,
+                    "items":[
+                      {
+                        "id":"1",
+                        "nom":"La migration des Dragons",
+                        "desc":"Voyagez à travers la région accompagné d'un convoi migrateur !",
+                        "lvl":"2",
+                        "type":"tr",
+                        "tags":"dx;wc;ciel"
+                      },
+                      {
+                        "id":"2",
+                        "nom":"Transformation Dragon !",
+                        "lvl":"1;3",
+                        "type":"att",
+                        "tags":"it",
+                        "age":"4",
+                        "desc":"Devenez dragon à bord d'un robot pour sociabiliser.",
+                        "desc-en":"You can become a Dragon (robot), and speak with other real dragons.",
+                        "desc-mi":"devené dragN à bor D1robo P sosiabilizé.",
+                        "sys":"Vous entrez dans un simulateur d'un de nos centre, qui vous retransmet en direct les sensations d'un robot dragon que vous commandez."
+                      },
+                      {
+                        "id":"3",
+                        "nom":"Le Grand Tour",
+                        "lvl":"2",
+                        "type":"att",
+                        "tags":"ff;(st",
+                        "desc":"Observez les différentes espèces de dragons dans leur milieu naturel."
+                      },
+                      {
+                        "id":"4",
+                        "nom":"Vol de précision",
+                        "lvl":"4",
+                        "type":"att",
+                        "tags":"ff;ss",
+                        "desc":"Pourquoi y-a-t-il autant d'abres dans une forêt ?",
+                        "desc-en":"Why there is a lot of tree in a forest ?",
+                        "desc-mi":"pUrqW i-a-t-il otA Darbr dA 1foré ?"
+                      }
+                      ]
+                    },
+                {
+                    "nom": "RCatastrophes"
                 }
             ]
         },
         {
-            "nom": "Science",
-            "type": "land"
-        },
-        {
-            "nom": "RGrottes"
-        },
-        {
-            "nom": "RMontagnes & Pôle"
-        },
-        {
-            "nom": "RPeur"
-        },
-        {
-            "nom": "RForêt"
-        },
-        {
-            "nom": "REau"
-        },
-        {
-            "nom": "RDragons"
-        },
-        {
-            "nom": "RCatastrophes"
+            "nom": "L'aventure Doudou",
+            "img": "ADDGlblPlan.jpg",
+            "type": "Parc",
+            "rcc":"ADD",
+            "items": [
+                {
+                    "id": "1",
+                    "nom": "Entrée",
+                    "type": "land",
+                    "items": [
+                        {
+                            "nom": "Monodoudou",
+                            "type": "tr",
+                            "desc": "Un monorail allant de la gare à la rivière en passant par la forêt de Doudou Noisette !",
+                            "tags": "IT;TR;AR;dx",
+                            "lvl": "1;3",
+                            "id": "1"
+                        },
+                        {
+                            "nom": "L'aventure commence !",
+                            "type": "Cinéma",
+                            "desc": "Un film vous plongeant dans le monde incroyable de l'aventure doudou.",
+                            "tags": "2D;3D;4D;dx",
+                            "id": "2"
+                        },
+                        {
+                            "nom": "Le passage des 6 doudous",
+                            "type": "mu",
+                            "desc": "Un chemin vous racontant le caractère de chacun des 6 doudous. Requis pour l'attraction: 6Doudous : Notre mission",
+                            "tags": "eau;npm;dx",
+                            "id": "3"
+                        },
+                        {
+                            "nom": "La petite roue",
+                            "type": "att",
+                            "id": "4",
+                            "lvl": "1",
+                            "tags": "photo;pti",
+                            "desc": "Pourquoi pas une grande roue ? Vous verrez..."
+                        },
+                        {
+                            "nom": "Le permis de Riri",
+                            "type": "att",
+                            "lvl": "1;2",
+                            "tags": "IT;eau;nde;pti",
+                            "desc": "Des voitures à piloter, mais n'oubliez pas le code de la route !(Non requis)",
+                            "id": "5"
+                        }
+                    ]
+                },
+                {
+                    "id": "2",
+                    "nom": "Petits doudous",
+                    "type": "land"
+                },
+                {
+                    "id": "3",
+                    "nom": "Les 6 Doudous en histoire",
+                    "type": "land"
+                },
+                {
+                    "id": "4",
+                    "nom": "Serpattractions",
+                    "type": "land"
+                },
+                {
+                    "id": "5",
+                    "nom": "Les Grands 8 en Folie",
+                    "type": "land"
+                },
+                {
+                    "id": "6",
+                    "nom": "Peupeuvre Land",
+                    "type": "land"
+                },
+                {
+                    "id": "7",
+                    "nom": "Hiponie",
+                    "type": "land"
+                },
+                {
+                    "id": "8",
+                    "nom": "Volcans",
+                    "type": "land"
+                },
+                {
+                    "id": "9",
+                    "nom": "Montagnes",
+                    "type": "land"
+                }
+            ]
         }
     ]
 }
