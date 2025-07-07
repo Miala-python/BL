@@ -1,0 +1,333 @@
+/*
+Name
+Image
+Type
+Rcc shortcut 
+History story lore
+Description 
+# tags
+Level
+teCh systems 
+State
+Age
+Weight 
+Period start;delay;stop
+: ID
+*/
+
+N;Miala
+(
+     N;Oneiri Exφloπ@
+            I;plan - V2.jpg
+            T;Parc
+            R;BL
+            (
+                  :;3
+                   N;Ville
+                    T;land
+                    D;Une ville qui a traversé tous les ages.
+                    H;”On est plus fort ensemble"
+A force de se regrouper, les êtres humains ont fondé une civilisation autour des "villes".
+Celle-ci a évolué dans le temps, mais pas à la même vitesse de partout.
+Dans tous les cas, les humains des villes ont oublié la raison de cette vie en collectivité...
+                    (
+                            N;Antiquité
+                            T;zone
+                           (
+                                   N;Le Métro
+                                   t; tr
+                                   d; Certains passages des égouts mènent finalement au métro contemporain.
+                                   #;DX;(AP;ST
+                                   l;0;1
+                                   :;1
+                                   -
+                                
+                                   N;Le Circus
+                                   t; att;mu
+                                   d; Venez-vous profiter du spectacle ou participer à la course ? Dans tous les cas, le stade antique vous accueille à bras ouverts !
+                                   l; 0;4
+                                   #; MA;FS;IT;Ss
+                                   :;2
+                                -
+                                
+                                   N;Le Théâtre
+                                   t; sp
+                                   :;3
+                                -
+                                
+                                   N;L'amphithéâtre
+                                   t; sp
+                                   :;4
+                                   l; 2
+                                   #; Ff
+			P;30min;9h10;1h;20h10
+                                   d; Soyez spectateur d'un combat de gladiateurs !
+                                -
+                                
+                                   N;Cinema
+                                   t; sp
+                                    S: Prochainement
+                                   :;5
+                                -
+                                
+                                  N;La Fuite de Pompéi
+                                   t; att
+                                   :;6
+                                   d; La fumée bouillante va arriver. Les tremblements de terre ont déjà commencé. Les dieux sont fâchés. La fuite est une nécessité.
+                                   #; FS;F;Ss
+                                   l; 5
+C;Grand huit, wagons de 4x4: rails par en bas, tremblements sur la montée, bousculades. Preshow: tremblement de la ville.
+P;8h30;5- min;20h
+                                -
+                                
+                                   N;Le forum
+                                   t; bb;rr
+                                   #; ext
+                                   :;F
+                                -
+                                
+                                   N;Le Marché
+                                   t; bb;rr
+                                   :;M
+                                
+                            )
+                        -
+                        
+                           N;Moyen-Âge
+                           t; zone
+                           (
+                                
+                                   N;Le Donjon
+                                   t; mu
+                                   d; Visitez la plus haute tour du château !
+                                   :;10
+                                   #; "ap
+                                   l; 1
+                                -
+                                
+                                   N;Attaque au château
+                                   t; att
+                                   :;11
+                                   #; ma;dx;it
+                                   l; 2
+                                   d; Attention ! On nous attaque ! Vite ! Aidez-nous à défendre !
+                                    c;Jeu de tir
+                                -
+                                
+                                   N;La Porte de Pierre
+                                   t; bb
+                                   :;P
+                                -
+                                
+                                   N;Les remparts
+                                   t; hh;rr;mu
+                                   :;R
+                                -
+                                
+                                   N;Le Village
+                                   t; zone
+                                   (
+                                        
+                                           N;Auberges
+                                           t; hh
+                                           :;<b style='color:orange;'>[•]</b>
+                                        
+                                    )
+                                
+                            )
+-
+N; Aujourd'hui 
+(
+   :;25
+N; L'immeuble en feu
+D;Aller ! Tout le monde à son poste ! Oui, même toi, apprenti pompier, le temps presse !
+#;it;FF;Eau;WC
+L;2
+)
+                        
+                    )
+-
+:;2
+N;Informatique
+S;Prochainement 
+-
+:;4
+N;Enfants
+H;Lorsque la création du Trésor a été ordonnée, les parents ont dû travailler dur. Les Doudous ont donc été créés pour occuper les enfants. Depuis, ils continuent leur mission pour chaque nouvelle génération.
+Comprenant alors l'importance des enfants, de nombreux commerces et de nombreuses attractions ont été construits pour qu'ils soient heureux.
+Mais, au-delà de toute réalité, l'imagination des enfants prend parfois le dessus: allez donc vous balader dans la forêt enchantée, vous n'en croirez pas vos yeux !
+P.S.: A tous les adultes, jeunes et moins jeunes: vous êtes simplement de grands enfants 😉 !
+T;land
+(
+:;1
+N;Les chaises volantes
+T;att
+#;ma;dx
+W;10
+L;2
+D;Prenez place sur votre siège et envolez-vous !
+C;Des chaises volantes dont le pilier central monte haut.
+-
+:;2
+N;Le manège de bois
+T;att
+L;1;2
+#;ma;dx
+D;Choisissez votre monture et… Hu-Dada !
+-
+:;3
+n;La roulade
+D;Qui fera le plus de roulades à bord de cette mini centrifugeuse ?
+T;att
+L;2
+W;10
+#;ma;dx
+-
+:;4
+N;La (très) grande roue
+D;Un grand plaisir pour petits et grands.
+L;0
+#;ma;ha
+T;att
+-
+:;5
+N;Le petit train chenille
+T;TR
+#;ma
+L;1
+-
+:;6
+N;Petits stands forains
+D;- Pêche aux canards
+- Tirs sur ballons
+- …
+T;att
+-
+:;7
+N;La foire aux Jeux
+D;Jouez seul ou en équipe aux jeux de société classiques, mais grandeur nature !
+T;att
+#;it
+L;1
+A;2
+-
+:;8
+N;Le Cirque
+T;SP
+D;Voir programme
+P;30min;10h20;1h;17h20 
+-
+:;9
+N;Sucettes en folies
+T;att
+D;Ça monte… ça tourne… Mais qu'est-ce que c'est que ces sucreries ?!
+#;ma;fs
+L;4
+P;3min;8h;5min;22h
+-
+:;<b style='color:green;'>[•]</b>
+n;La Forêt Enchantée
+T;zone
+(
+:;15
+N;La ruche des fées
+T;mu
+#;it;photo;ar;ap
+P;30min à 2h;8h;-;20h
+-
+:;16
+N;Livraison printanière
+L;4
+T;att
+#;ma;fs
+C;Grand huit mélangé avec dark ride pour introduction et conclusion.
+P;-;8h;-;21h
+)
+
+
+
+)
+-
+:;8
+N;Science
+-
+:;10
+N;Pandora
+S;Annulé pour le moment
+-
+:;11
+N;Grottes
+-
+:;12
+N;Montagnes & Pôles
+-
+:;13
+N;Peur
+-
+:;14
+N;Forêt
+(
+:;1
+N;Accrobranche
+D;10 parcours pour grimper, sauter, et surtout s'amuser !
+#;dx;fs;bb;AP;SS
+L;1;5
+A;1
+-
+:;5
+N;Course à travers la forêt dense
+#;fs;ss
+L;5
+)
+-
+:;15
+N;Eau
+(
+:;1
+N;L'aquarium
+T;mu
+#;bb
+L;0
+X;-;=
+-
+:;2
+N:Les marais salants 
+-
+:;12
+N;Toboués
+T;att
+D;Toboggans à bouées (4 toboggans)
+L;3;4
+#;AJ;Eau
+-
+N;Aquabus
+:;20
+L;1
+T;TR
+-
+:;V
+N;Vestiaires
+D;Passage obligatoire pour accéder à la zone de baignade.
+T;pop
+#;ap;bb
+-
+:;E
+N;L'Eautel
+T;HH
+Terrasse 
+)
+-
+:;16
+N;Dragons
+-
+:;19
+N;Catastrophes
+-
+:;22
+N;Gare
+
+
+
+)
+)
+
