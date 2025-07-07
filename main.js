@@ -60,13 +60,20 @@ function wait(condition, interval = 100, timeout = 10 ** 7) {
 
 // Code
 
-
 async function initMain(){
+
+    await wait(() => libLoaded('Tools'));
+    await wait(() => libLoaded('Lang'));
+    await wait(() => libLoaded('MiDbReader'));
+    
+    miDb.set('tags', 'dico');
+
 
     await wait(() => libLoaded('Loading'));
     // Loading init
     Loading.init();
     Loading.setProgressBar(0);
+    Loading.setProgressBar(10);
 
 }
 
