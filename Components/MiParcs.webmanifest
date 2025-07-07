@@ -2,18 +2,18 @@
   "name": "Parcs Miala",
   "short_name": "MiParcs",
   "description": "Le site officiel des parcs d'attraction de l'ile Miala",
-  "start_url": "https://miala-python.github.io/BL/v.html?lang=fr",
+  "start_url": "https://miala-python.github.io/BL/?lang=fr",
   "theme_color": "#000000",
   "lang": "fr-fr",
   "display": "minimal-ui",
   "icons": [
     {
-      "src": "https://miala-python.github.io/BL/imgs/logo.png",
+      "src": "https://miala-python.github.io/BL/Images/logo.png",
       "sizes": "1009x1024",
       "type": "image/png"
     },
     {
-      "src": "https://miala-python.github.io/BL/imgs/logoKRE.png",
+      "src": "https://miala-python.github.io/BL/Images/logoKRE.png",
       "sizes": "900x900",
       "type": "image/png"
     }

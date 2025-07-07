@@ -1,118 +1,25 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title id="pageTitle">Chargement... | Exφloπ@ / ADD | BL | Miala</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-	<link rel="stylesheet" href="./lib/style.css">
-	<script src="lib/jquery.js"></script>
-	<script src="lib/jquery.rwdImageMaps.js"></script>
-	<script src="lib/explora.js"></script>
-	<link rel="manifest" href="./lib/MiParcs.webmanifest">
-	<link rel="icon" href="./imgs/logo.png" type="image/png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accueil | Exφloπ@ | BL | Miala</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+
+    <style>
+        .block {
+            padding-top: 1rem;
+            padding-left: 3%;
+            padding-right: 3%;
+        }
+    </style>
 </head>
 
-<body>
-	<div class="block">
-		<div id="breadcrumb_container"></div>
-		<div class="content" id="pageContent" style="
-    margin-bottom: 2em;">
-			<div id="deleteMe">
-				<h1>Chargement en cours... | BL: Exφloπ@ / ADD</h1>
-				<br><progress class="progress global is-small is-primary" max="100">25%</progress>
-			</div>
-		</div>
-		<div class="content" id="changelog"></div>
-	</div>
-	<script>
-		$('img[usemap]').rwdImageMaps();
-	</script>
-
-	<div class="buttons bottom">
-		<button onclick="changeTheme()" class="button dico">Changer le thème</button>
-		<button onclick="switchLanguage()" class="button dico">Switch language</button>
-		<!-- <button onclick="window.location.href = getPageURL('search.html');" class="button">Recherche paramétrée</button> -->
-		<button data-target="modal-search" class="js-modal-trigger button dico">Recherche paramétrée</button>
-	</div>
-
-	<div id="modal-search" class="modal">
-		<div class="modal-background"></div>
-		<div class="modal-card">
-			<header class="modal-card-head">
-				<p class="modal-card-title dico">Recherche paramétrée</p>
-				<button class="delete" aria-label="close"></button>
-			</header>
-			<section class="modal-card-body section">
-				<!-- Content ... -->
-
-				<div class="container">
-					<div id="searchLoading">
-						<h1>Chargement en cours... | BL: Exφloπ@ / ADD</h1>
-						<br><progress class="progress is-small is-primary" max="100">25%</progress>
-						<br>
-					</div>
-					<form>
-						<!-- Zone Dropdown -->
-						<div class="field">
-							<label class="label dico">zone</label>
-							<div class="control is-expanded">
-								<div class="select">
-									<select id="zoneSelect">
-										<option value="0">Tous les parcs</option>
-									</select>
-								</div>
-							</div>
-						</div>
-
-						<!-- Tags Multiselect -->
-						<div class="field">
-							<label class="label">Tags</label>
-							<div class="control">
-								<div class="columns">
-									<div class="column">
-										<div class="select is-multiple">
-											<!-- <select size="7" style="height: 25vh" id="tagSelect"><--multiple->
-											</select> -->
-											<div id="tagSelect" style="height: 25vh; overflow-y: auto;">
-												
-											</div>
-										</div>
-									</div>
-									<div class="column">
-										<label class="checkbox">
-											<input id="SearchAnd" type="checkbox" disabled checked />
-											<div class="dico">tschmp</div><br>
-										</label>
-										<div id="SearchTagsSelected" class="field is-grouped is-grouped-multiline">
-
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Nom Text Field -->
-						<div class="field">
-							<label class="label dico">Nom</label>
-							<div class="control">
-								<input id="nameInput" class="input" type="text" placeholder="porte de">
-							</div>
-						</div>
-
-					</form>
-				</div>
-			</section>
-			<footer class="modal-card-foot">
-				<div class="buttons">
-					<button class="button is-success dico" type="submit" id="submitButton">Rechercher</button>
-					<button class="button dico">Annuler</button>
-				</div>
-			</footer>
-		</div>
-	</div>
-
-</body>
-
+    <body class="block">
+        <div class="content">
+            <h1>404-7 Cette page n'existe plus.</h1>
+            <h2>Veuillez patienter, vous allez etre redirigé sur la page de <a href="./index.html"><i><u>MialaParcs</i></u></a></h1>
+            <script>window.location.href = "./index.html";</script>
+        </div>
+    </body>
 </html>
