@@ -1,0 +1,14 @@
+n:name
+i:image
+t:type
+r:shortcut
+h:story
+d:desc
+#:tags
+l:level
+c:tech
+s:state
+a:ageMin
+w:weightMin
+p:period
+X:price
