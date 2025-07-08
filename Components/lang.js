@@ -2,7 +2,12 @@
 
 //TODO
 var Lang = {
-    get: ()=>{return 'fr';}
+    init: () => {
+        document.querySelector("html").setAttribute('lang', Lang.get());
+        // lang = urlGetParameter("lang");
+    },
+
+    get: () => { return 'fr'; }
 }
 
 

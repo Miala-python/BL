@@ -60,13 +60,88 @@ function wait(condition, interval = 100, timeout = 10 ** 7) {
 
 // Code
 
-async function initMain(){
+// Set the title of the webpage
+function setPageTitle() {
+    if (!miDb.dico) return console.error('64D No miDb.dico for setPageTitle');
+    let header;
+    if (Nav.uid && Nav.uid != miDb.dico.home) header = Nav.uid;
+    else {
+        Nav.uid = miDb.dico.home;
+        header = miDb.dico.acc;
+    }
+    document.getElementById("pageTitle").innerHTML = header + " | " + miDb.dico.title;
+}
+
+// Search in the db for the page item
+function getPageItem() {
+    if (!miDb.PARCS) return console.error('No db.PARCS');
+    return searchInObject(miDb.PARCS);
+}
+
+function updatePage() {
+    let [item, path] = getPageItem();
+    if (item); // TODO:Create page
+    else document.getElementById("deleteMe").innerHTML = "Un problème est survenu (erreur 404-7).";
+}
+
+function changeItem(uid) {
+    Nav.uid = uid;
+    Nav.updateUrl();
+    document.getElementById("newContent").id = "deleteMe";
+    // resetPageHeader();
+    setPageTitle();
+    updatePage();
+}
+
+async function loadChangelog() {
+    await miDb.set('changelog', 'doc');
+    document.getElementById('changelog').innerHTML = miDb.changelog;
+}
+
+function sortByTag(tid) {
+    alert("Fonction de tri par tag (" + tid + ") à venir ;)")
+
+    listContent = document.getElementById("listContent");
+
+    if (!listContent) {
+        Nav.uid = pathItem[1];
+        Nav.tag = tid;
+        Nav.updateUrl(true);
+        return;
+    }
+
+    // listContent.innerHTML = "<a onclick='changePage(`" + pageId + "`)'>" + dico['exitSortingMode'] + "</a>";
+    createItems(pageItem, listContent, tid);
+
+    Nav.uid = pathItem[1];
+    Nav.tag = tid;
+    Nav.updateUrl();
+}
+
+async function initMain() {
 
     await wait(() => libLoaded('Tools'));
+    await wait(() => libLoaded('Nav'));
+    Nav.init('lang', 'uid', 'tag', 'name');
+
     await wait(() => libLoaded('Lang'));
     await wait(() => libLoaded('MiDbReader'));
-    
+
     miDb.set('tags', 'dico');
+    miDb.set('dico', 'dico').then(() => {
+        setPageTitle();
+    });
+    miDb.set('objKey', 'dico');
+    wait(() => miDb.objKey).then(async () => {
+        Loading.setProgressBar(20);
+        miDb.set('PARCS', 'obj');
+        Loading.setProgressBar(30);
+
+        await wait(miDb.constLoaded);
+        await wait(() => { return miDb.dico; });
+        updatePage();
+    });
+    miDb.initConst();
 
 
     await wait(() => libLoaded('Loading'));

@@ -1,4 +1,4 @@
-// V1.2.EDDG
+// V1.3.BL
 // From: V1.2.EDDG
 
 var UNIQUEID = Math.floor(Date.now() / (10000)) - 170000000;
@@ -103,7 +103,7 @@ async function decompress(compressedStr) {
     return new TextDecoder().decode(decompressed);
 }
 
-// ## ARRAY -ARR
+// ##-ARRAY
 
 /**
  * Detect duplicates from an array
@@ -200,6 +200,20 @@ function copy(obj) {
     return JSON.parse(JSON.stringify(obj));
 }
 
+/**
+ * Search a specific object in object and children
+ * Returns the first occurence, or undefined [obj, path]
+*/
+function searchInObject(obj, condition, subKey = 'children', pathKey = 'name'){
+    if (condition(obj)) return [obj, [obj[pathKey]]];
+    if (!obj[subKey]) return;
+    for (let child of obj[subKey]){
+        let [result, path] = searchInObject(child, condition, subKey);
+        if (result) return [result, [data.nom, ...path]];
+    }
+    return [undefined, undefined]
+}
+
 // ## RESOLUTION UI UPDATE
 function waitUIupdate() {
     return new Promise(resolve => {
@@ -262,7 +276,7 @@ function throwERR(e) {
 }
 
 
-// ## URL
+// ##-URL
 function checkIfUrlContains(keyword) {
     const currentUrl = window.location.href; // Récupère l'URL actuelle du navigateur
     if (currentUrl.includes(keyword)) {
@@ -270,6 +284,11 @@ function checkIfUrlContains(keyword) {
     } else {
         return false; // Retourne faux si le mot-clé n'est pas trouvé
     }
+}
+
+// Function to get the value of a GET parameter by name
+function urlGetParameter(name) {
+    return new URLSearchParams(document.location.search).get(name);
 }
 
 

@@ -5,3 +5,8 @@ exitSortingMode:Quitter le mode de tri
 imgBtn:Afficher/Masquer l'image
 tschmp:Toutes les conditions doivent etre remplies.
 Switchlanguage:Switch to English
+hStart:A partir de
+hEnd:Jusqu'à
+hInterval:Toutes les
+hDuration:Durée
+lvl:Niveau
