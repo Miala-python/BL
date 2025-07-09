@@ -1,4 +1,4 @@
-// V1.3.BL
+// V3.0.BL
 // From: V1.2.EDDG
 
 var UNIQUEID = Math.floor(Date.now() / (10000)) - 170000000;
@@ -51,7 +51,7 @@ function waitTime(waitMs) {
     return new Promise(resolve => setTimeout(resolve, waitMs))
 }
 
-// ## VARS
+// ##-VARS
 
 function noError(varName) {
     let Var;
@@ -61,7 +61,7 @@ function noError(varName) {
     return Var;
 }
 
-// ## INT
+// ##-INT
 
 function getUniqueID() {
     UNIQUEID += 1;
@@ -72,7 +72,19 @@ function randint(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// ## STRING
+// ##-STRING
+
+function majFirst(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+
+function majWords(str) {
+  return str.split(' ').map(word => majFirst(word)).join(' ');
+}
+
+function majSentence(str) {
+  return str.split('. ').map(sentence => majFirst(sentence)).join('. ');
+}
 
 // Fonction de compression native (utilisant l'API Compression Streams)
 async function compress(str) {
@@ -195,7 +207,7 @@ function getARandomItem(arr, conditions, restoration = () => { }) {
     return result;
 }
 
-// ## OBJ
+// ##-OBJ
 function copy(obj) {
     return JSON.parse(JSON.stringify(obj));
 }
@@ -204,14 +216,15 @@ function copy(obj) {
  * Search a specific object in object and children
  * Returns the first occurence, or undefined [obj, path]
 */
-function searchInObject(obj, condition, subKey = 'children', pathKey = 'name'){
+function searchInObject(obj, condition, subKey = 'children', pathKey = 'name') {
     if (condition(obj)) return [obj, [obj[pathKey]]];
-    if (!obj[subKey]) return;
-    for (let child of obj[subKey]){
-        let [result, path] = searchInObject(child, condition, subKey);
-        if (result) return [result, [data.nom, ...path]];
+    if (obj[subKey]) {
+        for (let child of obj[subKey]) {
+            let [result, path] = searchInObject(child, condition, subKey);
+            if (result) return [result, [obj[pathKey], ...path]];
+        }
     }
-    return [undefined, undefined]
+    return [undefined, undefined];
 }
 
 // ## RESOLUTION UI UPDATE
@@ -256,7 +269,16 @@ async function getDb(path, waitERR = true) {
     let data;
     do {
         await fetch(path)
-            .then(response => response.text())
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                } else if (response.status === 404) {
+                    // Do not assign data if 404
+                    return null;
+                } else {
+                    throw new Error('HTTP error: ' + response.status);
+                }
+            })
             .then(dt => {
                 data = dt;
             })

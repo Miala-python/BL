@@ -11,4 +11,4 @@ var Lang = {
 }
 
 
-var LangJSLoaded;
+var LangJSLoaded = true;

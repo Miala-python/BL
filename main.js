@@ -60,28 +60,32 @@ function wait(condition, interval = 100, timeout = 10 ** 7) {
 
 // Code
 
+var pageHeader; // Used in visu
 // Set the title of the webpage
 function setPageTitle() {
     if (!miDb.dico) return console.error('64D No miDb.dico for setPageTitle');
-    let header;
-    if (Nav.uid && Nav.uid != miDb.dico.home) header = Nav.uid;
+    if (Nav.uid && Nav.uid != miDb.dico.home) pageHeader = Nav.uid;
     else {
         Nav.uid = miDb.dico.home;
-        header = miDb.dico.acc;
+        pageHeader = miDb.dico.acc;
     }
-    document.getElementById("pageTitle").innerHTML = header + " | " + miDb.dico.title;
+    document.getElementById("pageTitle").innerHTML = pageHeader + " | " + miDb.dico.title;
 }
 
 // Search in the db for the page item
 function getPageItem() {
     if (!miDb.PARCS) return console.error('No db.PARCS');
-    return searchInObject(miDb.PARCS);
+    return searchInObject(miDb.PARCS, (obj) => {
+        return obj.name == Nav.uid || obj.shortcut == Nav.uid;
+    });
 }
 
+var pageItem, pathItem; // Used in sortByTag
 function updatePage() {
     let [item, path] = getPageItem();
-    if (item); // TODO:Create page
+    if (item) Visu.createPage(item, path);
     else document.getElementById("deleteMe").innerHTML = "Un problème est survenu (erreur 404-7).";
+    [pageItem, pathItem] = [item, path];
 }
 
 function changeItem(uid) {
@@ -94,12 +98,12 @@ function changeItem(uid) {
 }
 
 async function loadChangelog() {
-    await miDb.set('changelog', 'doc');
+    await miDb.set('changelog', 'list', 'doc');
     document.getElementById('changelog').innerHTML = miDb.changelog;
 }
 
 function sortByTag(tid) {
-    alert("Fonction de tri par tag (" + tid + ") à venir ;)")
+    console.log("Fonction de tri par tag (" + tid + ") à venir ;)")
 
     listContent = document.getElementById("listContent");
 
@@ -111,7 +115,7 @@ function sortByTag(tid) {
     }
 
     // listContent.innerHTML = "<a onclick='changePage(`" + pageId + "`)'>" + dico['exitSortingMode'] + "</a>";
-    createItems(pageItem, listContent, tid);
+    Visu.createItems(pageItem, listContent, tid);
 
     Nav.uid = pathItem[1];
     Nav.tag = tid;
@@ -121,25 +125,40 @@ function sortByTag(tid) {
 async function initMain() {
 
     await wait(() => libLoaded('Tools'));
+    console.log('Tools loaded');
     await wait(() => libLoaded('Nav'));
     Nav.init('lang', 'uid', 'tag', 'name');
+    console.log('Nav loaded & init');
 
     await wait(() => libLoaded('Lang'));
+    Lang.init();
+    console.log('Lang loaded & init');
     await wait(() => libLoaded('MiDbReader'));
+    console.log('MiDb loaded');
 
     miDb.set('tags', 'dico');
     miDb.set('dico', 'dico').then(() => {
         setPageTitle();
     });
-    miDb.set('objKey', 'dico');
-    wait(() => miDb.objKey).then(async () => {
-        Loading.setProgressBar(20);
-        miDb.set('PARCS', 'obj');
+    Loading.setProgressBar(15);
+    miDb.set('objKey', 'dico').then(async () => {
+        await wait(() => libLoaded('Loading'));
+        Loading.setProgressBar(25);
+        await miDb.set('PARCS', 'obj');
         Loading.setProgressBar(30);
 
         await wait(miDb.constLoaded);
+        Loading.setProgressBar(40);
         await wait(() => { return miDb.dico; });
+        Loading.setProgressBar(50);
+        await wait(() => libLoaded('Visu'));
+        Loading.setProgressBar(60);
         updatePage();
+        Loading.setProgressBar(70);
+
+        await wait(() => libLoaded('SearchModal'));
+        initSearchModal();
+        Loading.setProgressBar(80);
     });
     miDb.initConst();
 
@@ -147,6 +166,8 @@ async function initMain() {
     await wait(() => libLoaded('Loading'));
     // Loading init
     Loading.init();
+    console.log('Loading loaded & init');
+
     Loading.setProgressBar(0);
     Loading.setProgressBar(10);
 

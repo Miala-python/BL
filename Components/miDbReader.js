@@ -1,36 +1,40 @@
 // V1.0.BL
 
 var miDb = {
-    set: async (name, type, _wait = 1) => {
+    set: async (name, type, ext='db', _wait = 1) => {
         let dataGlobal = "";
-        getDb(`./DB/${Lang.get()}.${name}.${type}.db.mi`, false).then((data) => {
+        let nbReq = 0;
+        getDb(`./DB/${Lang.get()}.${name}.${type}.${ext}.mi`, false).then((data) => {
             if (data) dataGlobal += "\n" + data;
+            nbReq += 1;
         });
-        getDb(`./DB/${name}.${type}.db.mi`, false).then((data) => {
+        getDb(`./DB/${name}.${type}.${ext}.mi`, false).then((data) => {
             if (data) dataGlobal += "\n" + data;
+            nbReq += 1;
         });
         const timer = Date.now() + 10000;
-        wait(() => { return dataGlobal !== "" || Date.now > timer }, 1000, 90000).then(() => {
-            if (dataGlobal !== "") miDb[name] = miDb.format(type, data);
-            else miDb.set(name, type, 0);
+        wait(() => { return nbReq > 1 || Date.now > timer }, 1000, 90000).then(() => {
+            if (dataGlobal !== "") miDb[name] = miDb.format(type, dataGlobal);
+            else miDb.set(name, type, ext, 0);
         })
         if (_wait) await wait(() => { return miDb[name]; });
     },
 
 
     format: (type, data) => {
+        // console.log('Format ' + type, data);
         switch (type) {
             case 'dico':
                 const dico = {};
                 data.trim().split("\n").map((row) => {
-                    const keyVal = row.trim().split(":");
+                    let keyVal = row.trim().split(":");
                     if (keyVal[0] == '') keyVal = [':', keyVal[2]]; // For ::id
                     dico[keyVal[0]] = keyVal[1];
                 });
                 return dico;
             case 'obj':
                 const lines = data.trim().split("\n").map(row => row.trim().split(";"));
-                const len = lines.lenth;
+                const len = lines.length;
                 let idx = -1;
                 let comment;
                 const fillObjectItems = (obj) => {
@@ -61,15 +65,16 @@ var miDb = {
                             case "":
                                 continue;
                             default:
-                                if (lines[idx].lenth == 1) {
+                                if (lines[idx].length == 1) {
                                     const lastVal = items[itemIdx][lastKey];
                                     if (Array.isArray(lastVal)) lastVal.push(lines[idx][0]);
                                     else items[itemIdx][lastKey] += lines[idx][0];
                                     continue;
                                 }
                                 lastKey = lines[idx][0].toLowerCase();
-                                if (noError("miDb.tags") && miDb.tags[lastKey]) lastKey = miDb.tags[lastKey];
-                                if (lines[idx].lenth == 2) items[itemIdx][lastKey] = lines[idx][1];
+                                const keyTransf = noError(`miDb.objKey[${JSON.stringify(lastKey)}]`);
+                                if (keyTransf) lastKey = keyTransf;
+                                if (lines[idx].length == 2) items[itemIdx][lastKey] = lines[idx][1];
                                 else items[itemIdx][lastKey] = lines[idx].slice(1);
                         }
                     }
@@ -77,11 +82,10 @@ var miDb = {
                 };
                 const dataObject = {};
                 fillObjectItems(dataObject);
-                return dataObject;
-            case 'doc':
+                return dataObject.children[0];
+            case 'list':
                 let lvl = 0;
                 let txt = "";
-
                 data.split('\n').forEach(line => {
                     if (line.startsWith('>')) {
                         let newLvl = parseInt(line.substring(1));

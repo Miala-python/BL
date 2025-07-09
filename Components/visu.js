@@ -67,8 +67,8 @@ var Visu = {
             titlePlace.appendChild(descElement);
         }
 
-        addHoures(pageItem, titlePlace);
-        addTags(pageItem, titlePlace);
+        Visu.addHoures(pageItem, titlePlace);
+        Visu.addTags(pageItem, titlePlace);
 
         // Create the image
         if (imgDropdown) {
@@ -99,7 +99,7 @@ var Visu = {
             listContent.id = "listContent";
 
 
-            createItems(pageItem, listContent);
+            Visu.createItems(pageItem, listContent);
 
             cardContent.appendChild(listContent);
             list.appendChild(cardContent);
@@ -134,11 +134,11 @@ var Visu = {
 
         // Get the changelog on main page
         let chg = document.getElementById('changelog');
-        if (pageId == miDb.dico.home) {
+        if (Nav.uid == miDb.dico.home) {
             chg.classList.add("last_item");
             chg.innerHTML = "Chargement de l'historique des versions en cours...";
             
-            setChangeLog();
+            loadChangelog();
         } else {
             chg.innerHTML = "";
             chg.classList.remove("last_item");
@@ -170,18 +170,18 @@ var Visu = {
         let tags = document.createElement("div");
         tags.classList.add("tags");
         if (item.type) {
-            createTags(item.type.split(";"), tags, "is-info");
+            Visu.createTags(item.type, tags, "is-info");
         }
         if (item.level) {
-            let lvlList = item.level.split(";");
+            let lvlList = item.level
             let level = miDb.dico['lvl'] + " " + lvlList[0];
             if (lvlList[1]) {
                 level += ` ${miDb.dico["->"]} ${lvlList[1]}`;
             }
-            createTags([level], tags, "is-danger");
+            Visu.createTags([level], tags, "is-danger");
         }
         if (item.tags) {
-            createTags(item.tags.split(";"), tags);
+            Visu.createTags(item.tags, tags);
 
         }
         parent.appendChild(tags);
@@ -189,9 +189,10 @@ var Visu = {
 
     // Create tags from a list
     createTags: (tags, parent, colour = "NaC") => {
-
+        if (!Array.isArray(tags)) tags = [tags];
 
         tags.forEach(tag_txt => {
+            tag_txt = tag_txt.trim();
             let tag = document.createElement("span");
             // console.log(tag_txt);
             tag.classList.add("tag", colour, "is-hoverable");//, "tag-" + tag_txt);
@@ -202,7 +203,7 @@ var Visu = {
             if (tag_txt_part[0] == "") {
                 tag_txt_part.shift();
                 tag_txt = tag_txt_part.join("*").toLowerCase();
-                tag.innerHTML = miDb.dico['*'] + " ";
+                tag.innerHTML = miDb.tags['*'] + " ";
             }
 
             // Tag onclick
@@ -220,7 +221,7 @@ var Visu = {
 
 
             //Add tag to tag list
-            tag.innerHTML += tag_txt_convert;
+            tag.innerHTML += majFirst(tag_txt_convert);
             parent.appendChild(tag);
         });
     },
@@ -229,22 +230,23 @@ var Visu = {
     // Create all list items from a parent
     createItems: (parent, listContent, sortingTag = false, lvl = 0, ParentZone = true) => {
         console.log(`createItems(${parent.name}  ; ${lvl})`);
-        if (!parent.items) {
+        if (!parent.children) {
             console.log("No items in ", parent.name);
             return;
         }
 
         if (!sortingTag) {
-            sortingTag = getParameterByName("tag");
+            sortingTag = Nav.tag;
         }
 
+        let sortingName; //TODO 
         const sortingState = (sortingTag || sortingName);
 
         if (sortingState && lvl == 0) {
             if (sortingName) {
-                listContent.innerHTML = "<a onclick='changeUrl(`" + Nav.uid + "`,false,false,true,false)'>" + miDb.dico['exitSortingMode'] + "</a>";
+                listContent.innerHTML = "<a onclick='Nav.updateUrl(true)'>" + miDb.dico['exitSortingMode'] + "</a>";
             } else {
-                listContent.innerHTML = "<a onclick='changePage(`" + Nav.uid + "`)'>" + miDb.dico['exitSortingMode'] + "</a>";
+                listContent.innerHTML = "<a onclick='Nav.updateUrl()'>" + miDb.dico['exitSortingMode'] + "</a>";
             }
             if (sortingTag) {
                 if (sortingTag.includes(miDb.dico['lvl'])) {
@@ -258,7 +260,7 @@ var Visu = {
 
         lvl += 1;
 
-        parent.items.forEach(item => {
+        parent.children.forEach(item => {
 
             let IsZone = item.type == "zone";
 
@@ -276,8 +278,14 @@ var Visu = {
             } else if (!cd) {
                 let score = 0;
                 sortingTag.forEach(tag => {
-                    cd = (item.type && item.type.toLowerCase().includes(tag));
-                    cd = cd || (item.tags && item.tags.toLowerCase().includes(tag));
+                    cd = (
+                        typeof item.type == 'string' && item.type.toLowerCase().includes(tag)
+                        || (Array.isArray(item.type) && item.type.map(t => t.toLowerCase().includes(tag)).includes(true))
+                    );
+                    cd = cd || (
+                        typeof item.tags == 'string' && item.tags.toLowerCase().includes(tag)
+                        || (Array.isArray(item.tags) && item.tags.map(t => t.toLowerCase().includes(tag)).includes(true))
+                    );
                     if (cd) { score += 1; }
                 })
 
@@ -292,7 +300,7 @@ var Visu = {
 
 
                 let itemElement = document.createElement("a");
-                itemElement.onclick = () => changePage(item.name);
+                itemElement.onclick = () => changeItem(item.name);
 
                 let article = document.createElement("article");
                 article.id = "pl_view_article_0";
@@ -327,8 +335,8 @@ var Visu = {
 
                 contentDiv.innerHTML = txt;
 
-                addHoures(item, contentDiv);
-                addTags(item, contentDiv);
+                Visu.addHoures(item, contentDiv);
+                Visu.addTags(item, contentDiv);
                 // contentDiv.innerHTML += "<br>";
 
                 // listItem = document.createElement("li");
@@ -341,7 +349,7 @@ var Visu = {
 
             }
             if (IsZone || sortingState) {
-                createItems(item, listContent, sortingTag, lvl, IsZone);
+                Visu.createItems(item, listContent, sortingTag, lvl, IsZone);
             }
         });
     }

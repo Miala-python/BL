@@ -6,6 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title id="pageTitle">Chargement... | Parcs | Miala</title>
 	<link rel="stylesheet" href="./Components/bulma.css">
+	<link rel="stylesheet" href="./Components/divers.css">
+	<link rel="stylesheet" href="./Components/buttons.css">
+	<link rel="stylesheet" href="./Components/list.css">
 
 	<script src="./main.js"></script>
 	<script src="./Components/tools.js"></script>
@@ -14,6 +17,10 @@
 	<script src="./Components/miDbReader.js"></script>
 	<script src="./Components/visu.js"></script>
 	<script src="./Components/nav.js"></script>
+	<script src="./Components/theme.js"></script>
+	<script src="./Components/searchModal.js"></script>
+	<script src="./Components/jquery.js"></script>
+	<script src="./Components/jquery.rwdImageMaps.js"></script>
 
 	<link rel="manifest" href="./Components/MiParcs.webmanifest">
 	<link rel="icon" href="./Images/logo.png" type="image/png">
@@ -32,15 +39,15 @@
 		</div>
 		<div class="content" id="changelog"></div>
 	</div>
-	<script>
+	<!-- <script>
 		$('img[usemap]').rwdImageMaps();
-	</script>
+	</script> -->
 
 	<div class="buttons bottom">
-		<button onclick="changeTheme()" class="button dico">Changer le thème</button>
-		<button onclick="switchLanguage()" class="button dico">Switch language</button>
+		<button onclick="changeTheme()" class="button dico">🔄 Thème</button>
+		<!-- <button onclick="switchLanguage()" class="button dico">Switch language</button> -->
 		<!-- <button onclick="window.location.href = getPageURL('search.html');" class="button">Recherche paramétrée</button> -->
-		<button data-target="modal-search" class="js-modal-trigger button dico">Recherche paramétrée</button>
+		<button data-target="modal-search" class="js-modal-trigger button dico">🔎</button>
 	</div>
 
 	<div id="modal-search" class="modal">
@@ -119,6 +126,81 @@
 		</div>
 	</div>
 
+    <!-- Site worker V0.EDDG -->
+     <script>
+        // Fonction pour collecter les URLs des assets
+        function collectAssetsUrls() {
+            const urls = new Set();
+
+            // Ajouter les URLs des images
+            document.querySelectorAll('img').forEach(img => {
+                if (img.src) {
+                    urls.add(new URL(img.src).href); // Utilise URL pour obtenir l'URL absolue
+                }
+            });
+
+            // Ajouter les URLs des scripts externes (sauf le Service Worker lui-même)
+            document.querySelectorAll('script[src]').forEach(script => {
+                if (script.src && !script.src.includes('sw.js')) {
+                    urls.add(new URL(script.src).href);
+                }
+            });
+
+            // Ajouter les URLs des feuilles de style externes
+            document.querySelectorAll('link[rel="stylesheet"][href]').forEach(link => {
+                if (link.href) {
+                    urls.add(new URL(link.href).href);
+                }
+            });
+
+            // Ajoutez d'autres types d'assets si nécessaire (ex: fonts, vidéos)
+
+            return Array.from(urls);
+        }
+
+        // Vérifie si les Service Workers sont supportés par le navigateur
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => {
+                        console.log('Service Worker enregistré avec succès :', registration);
+
+                        // Une fois le Service Worker enregistré, envoyez-lui les URLs des assets
+                        if (registration.active) {
+                            const assetsToCache = collectAssetsUrls();
+                            registration.active.postMessage({
+                                type: 'CACHE_ASSETS',
+                                urls: assetsToCache
+                            });
+                            console.log('URLs des assets envoyées au Service Worker :', assetsToCache);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Échec de l\'enregistrement du Service Worker :', error);
+                    });
+            });
+        } else {
+            console.warn('Votre navigateur ne supporte pas les Service Workers.');
+        }
+
+        // Met à jour le statut de la connexion en temps réel
+        function updateOnlineStatus() {
+            if (navigator.onLine) {
+                console.log('Vous êtes en ligne.');
+                console.log('status-message status-online');
+            } else {
+                console.log('Vous êtes hors ligne. Le contenu est servi depuis le cache.');
+                console.log('status-message status-offline');
+            }
+        }
+
+        // Écoute les changements d'état de la connexion
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+
+        // Appelle la fonction au chargement initial de la page
+        updateOnlineStatus();
+    </script>
 </body>
 
 </html>

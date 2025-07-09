@@ -11,9 +11,9 @@ var Nav = {
     updateUrl(realChange = false) {
         let newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
   
-        if (Nav.parameter && Nav.parameter.length){
+        if (noError('Nav.parameters.length')){
             newUrl += '?';
-            Nav.parameter.forEach((param, index) => {
+            Nav.parameters.forEach((param, index) => {
                 if (Nav[param] === undefined || Nav[param] === null) {
                     console.warn(`Parameter ${param} is undefined or null.`);
                     return;
