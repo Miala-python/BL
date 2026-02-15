@@ -244,9 +244,9 @@ var Visu = {
 
         if (sortingState && lvl == 0) {
             if (sortingName) {
-                listContent.innerHTML = "<a onclick='Nav.updateUrl(true)'>" + miDb.dico['exitSortingMode'] + "</a>";
+                listContent.innerHTML = "<a onclick='Nav.tag=null;Nav.updateUrl(true);'>" + miDb.dico['exitSortingMode'] + "</a>";
             } else {
-                listContent.innerHTML = "<a onclick='Nav.updateUrl()'>" + miDb.dico['exitSortingMode'] + "</a>";
+                listContent.innerHTML = "<a onclick='Nav.tag=null;Nav.updateUrl();'>" + miDb.dico['exitSortingMode'] + "</a>";
             }
             if (sortingTag) {
                 if (sortingTag.includes(miDb.dico['lvl'])) {
