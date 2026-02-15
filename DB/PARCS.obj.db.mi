@@ -250,6 +250,14 @@ P;-;8h;-;21h
 -
 :;8
 N;Science
+(
+:;1 
+N;Petit Chimiste
+d;Laboratoire scientifique avec de nombreuses expériences amusantes !
+#;ap;it 
+l;0;2 
+t;mu;bb
+)
 -
 :;10
 N;Pandora
@@ -261,6 +269,38 @@ N;Grottes
 :;12
 N;Montagnes & Pôles
 (
+  :;1
+  n;L'usine du Père Noël
+  d;Visitez l'usine des jouets du Père Noël
+  #;st 
+  t;mu 
+  l;0
+  -
+  :;2 
+  n;Le traineau du Père Noël
+  d;Le voyage vers les maisons des enfants n'est pas de tout repos...
+  t;att;ma
+  c;Souris folles; Bouton pour lancer les cadeaux au bons moments.
+  l;3 
+  a;3
+  #;fs
+  -
+  :;3 
+  n;La Chaine de fabrication des jouets
+  d;Vous allez être emballés par cette attraction !
+  t;att
+  l;2 
+  #;*st;npm;ff
+  c;Dark Ride
+  -
+  :;4 
+  n;Les petites buches
+  d;Une petite descente sur la banquise ?
+  #;eau
+  l;2 
+  w;10;50 
+  t;ma 
+  -
 :;10
 N;Toboggans Géants
 #;fs
@@ -298,7 +338,16 @@ L;0
 X;-;=
 -
 :;2
-N:Les marais salants 
+N;Les marais salants 
+l;0 
+t;mu;bb
+- 
+:;3 
+n;La Pieuvre
+d;Accrochez-vous bien à votre tentacule !
+l;3;4 
+t;att;ma
+c;Les wagons sont les ventouses
 -
 :;12
 N;Toboués
@@ -306,6 +355,13 @@ T;att
 D;Toboggans à bouées (4 toboggans)
 L;3;4
 #;AJ;Eau
+- 
+:;19
+n;Attention Requins !
+d;Surviverez-vous à cette attaque épique !? 
+l;5 
+#;fs;eau;ss;ff
+t;att;ma
 -
 N;Aquabus
 :;20
