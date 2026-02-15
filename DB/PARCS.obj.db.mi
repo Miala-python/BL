@@ -348,6 +348,21 @@ d;Accrochez-vous bien à votre tentacule !
 l;3;4 
 t;att;ma
 c;Les wagons sont les ventouses
+- 
+:;4 
+n;En Tortue Simone !
+d;En plus ça tourne !
+l;4 
+#;fs;ss 
+t;att;ma
+- 
+:;5 
+n;L'Escalier
+d;Montez en ascenseur pour redescendre via des chutes d'eau !
+c;Freins pneumatiques dessous
+l;4 
+#;fs;ss;eau 
+t;att;ma 
 -
 :;12
 N;Toboués
@@ -383,8 +398,16 @@ Terrasse
 :;16
 N;Dragons
 -
+
 :;19
 N;Catastrophes
+(
+  :;A
+  n;La Ville Engloutie
+  t;zone;bb
+)
+
+
 -
 :;22
 N;Gare
