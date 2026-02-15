@@ -41,7 +41,7 @@ Dans tous les cas, les humains des villes ont oublié la raison de cette vie en 
                                    l;0;1
                                    :;1
                                    -
-                                
+
                                    N;Le Circus
                                    t; att;mu
                                    d; Venez-vous profiter du spectacle ou participer à la course ? Dans tous les cas, le stade antique vous accueille à bras ouverts !
@@ -49,27 +49,27 @@ Dans tous les cas, les humains des villes ont oublié la raison de cette vie en 
                                    #; MA;FS;IT;Ss
                                    :;2
                                 -
-                                
+
                                    N;Le Théâtre
                                    t; sp
                                    :;3
                                 -
-                                
+
                                    N;L'amphithéâtre
                                    t; sp
                                    :;4
                                    l; 2
                                    #; Ff
-			P;30min;9h10;1h;20h10
+                        P;30min;9h10;1h;20h10
                                    d; Soyez spectateur d'un combat de gladiateurs !
                                 -
-                                
+
                                    N;Cinema
                                    t; sp
                                     S: Prochainement
                                    :;5
                                 -
-                                
+
                                   N;La Fuite de Pompéi
                                    t; att
                                    :;6
@@ -79,24 +79,24 @@ Dans tous les cas, les humains des villes ont oublié la raison de cette vie en 
 C;Grand huit, wagons de 4x4: rails par en bas, tremblements sur la montée, bousculades. Preshow: tremblement de la ville.
 P;8h30;5- min;20h
                                 -
-                                
+
                                    N;Le forum
                                    t; bb;rr
                                    #; ext
                                    :;F
                                 -
-                                
+
                                    N;Le Marché
                                    t; bb;rr
                                    :;M
-                                
+
                             )
                         -
-                        
+
                            N;Moyen-Âge
                            t; zone
                            (
-                                
+
                                    N;Le Donjon
                                    t; mu
                                    d; Visitez la plus haute tour du château !
@@ -104,7 +104,7 @@ P;8h30;5- min;20h
                                    #; "ap
                                    l; 1
                                 -
-                                
+
                                    N;Attaque au château
                                    t; att
                                    :;11
@@ -113,27 +113,27 @@ P;8h30;5- min;20h
                                    d; Attention ! On nous attaque ! Vite ! Aidez-nous à défendre !
                                     c;Jeu de tir
                                 -
-                                
+
                                    N;La Porte de Pierre
                                    t; bb
                                    :;P
                                 -
-                                
+
                                    N;Les remparts
                                    t; hh;rr;mu
                                    :;R
                                 -
-                                
+
                                    N;Le Village
                                    t; zone
                                    (
-                                        
+
                                            N;Auberges
                                            t; hh
                                            :;<b style='color:orange;'>[•]</b>
-                                        
+
                                     )
-                                
+
                             )
 -
 N; Aujourd'hui 
@@ -144,7 +144,7 @@ D;Aller ! Tout le monde à son poste ! Oui, même toi, apprenti pompier, le temp
 #;it;FF;Eau;WC
 L;2
 )
-                        
+
                     )
 -
 :;2
@@ -260,6 +260,13 @@ N;Grottes
 -
 :;12
 N;Montagnes & Pôles
+(
+:;10
+N;Toboggans Géants
+#;fs
+L;3;4
+W;15
+)
 -
 :;13
 N;Peur
@@ -325,10 +332,20 @@ N;Catastrophes
 -
 :;22
 N;Gare
-
+(
+:;1 
+N;Le Circuit de Voiture
+D;Pour petits & grands
+L;1;4 
+#;ma;it
+T;att;tr;bb
+- 
+N;Course de F1 !
+L;3 
+#;fs;it
+)
 
 
 )
 )
 )
-
