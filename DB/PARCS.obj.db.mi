@@ -329,6 +329,8 @@ L;5
 -
 :;15
 N;Eau
+h;<a href="scratch.mit.edu/users/totolune">Lien de l'original</a>
+t;land
 (
 :;1
 N;L'aquarium
@@ -364,13 +366,82 @@ l;4
 #;fs;ss;eau 
 t;att;ma 
 -
+:;6
+n;Rivière du Nord 
+d;Une rivière canadienne peu habituelle...
+l;4
+#;fs;ss;eau;Ff
+t;att;rc
+-
+:;7
+n;Les petits bateaux, sur l'eau 
+d;Montez dans des bouées à la recherche d'aventuriers perdus.
+l;3
+t;att;ma
+#;dx;ss;eau
+-
+:;8
+n;Plongée sous-marine
+l;2
+t;mu;att;dr
+-
+n;Locations
+(
+   :;9
+   n;Ski nautique
+   t;loc
+   -
+   :;10
+   n;Cannoé / Kayak
+   t;loc 
+)
+-
+:;11
+n;Zones de pêche
+d;Consultez le programme 
+#;todo
+-
 :;12
 N;Toboués
 T;att
 D;Toboggans à bouées (4 toboggans)
 L;3;4
 #;AJ;Eau
-- 
+-
+n;Zone de baignade
+(
+:;13
+n;Piscine 
+t;bg 
+d;Inclus une piscine à vague
+-
+:;14
+n;Spa et Jacuzzi 
+t;bg
+-
+:;15
+n;Sourcs chaudes
+t;bg 
+-
+:;16
+n;Aire de jeux aquatiques
+t;aj 
+#;bg
+-
+:;17
+n;Tobbogans à eau 
+l;3;4
+t;att;aj
+#;bg
+-
+:;18
+n;Rapido
+d;Laissez-vous emporter par le courant !
+l;3;5
+#;fs
+t;att;bg
+)
+-
 :;19
 n;Attention Requins !
 d;Surviverez-vous à cette attaque épique !? 
@@ -379,20 +450,50 @@ l;5
 t;att;ma
 -
 N;Aquabus
-:;20
+:;<b style='color:purple'>(20)</b> 
 L;1
 T;TR
+-
+:;<del>21</del>
+n;Le Grand Hangar
+#;ap;ff;it
+d;Migeto mhin apievrs mê minh mûnz pzr sis !
+t;dr
 -
 :;V
 N;Vestiaires
 D;Passage obligatoire pour accéder à la zone de baignade.
-T;pop
+T;ppo
 #;ap;bb
+-
+:;P 
+n;Poste de secours 
 -
 :;E
 N;L'Eautel
 T;HH
-Terrasse 
+x;-
+-
+:;R 
+n;Le Resteaurant
+t;rr 
+x;+
+-
+:;S 
+n;Sous l'océan 
+t;hh
+#;bb
+x;+
+-
+:;T 
+n;La Terrasse
+t;rr 
+x;=
+-
+:;F 
+n;Les Fruits de la mer
+t;r;b 
+x;-
 )
 -
 :;16
@@ -413,7 +514,7 @@ N;Catastrophes
 N;Gare
 t;land
 (
-:;<b style='color:purple;'>[1]</b> 
+:;<b style='color:purple'>[1]</b> 
 N;Stations de train 
 t;tr 
 -
