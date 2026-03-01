@@ -14,7 +14,7 @@ if (workbox) {
     // Cela permet de gérer différentes versions de cache si nécessaire
     workbox.core.setCacheNameDetails({
         prefix: 'BL',
-        suffix: 'v1',
+        suffix: 'v1.1',
         precache: 'precache',
         runtime: 'runtime'
     });
